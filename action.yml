@@ -8,17 +8,20 @@ inputs:
     telegram_chat_id:
         description: 'Telegram chat id'
         required: true
-    gh_event:
-        description: 'Github event'
+    telegram_msg_text:
+        description: 'Telegram message text'
         required: true
-    gh_actor:
-        description: 'Github actor'
-        required: true
-
+    telegram_parse_mode:
+        description: 'Telegram parse mode'
+        required: false
+        default: 'Markdown'
+    telegram_inline_keyboard:
+        description: 'Telegram inline keyboard'
+        required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
 
 branding:
     icon: 'alert-circle'
-    color: 'blue'
+    color: 'green'

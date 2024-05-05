@@ -11,12 +11,9 @@ class Env:
     except:
         raise Exception("TELEGRAM_CHAT_ID not found in environment variables")
 
-    GH_REPO=os.environ.get("GITHUB_REPOSITORY")
+    TELEGRAM_MSG_TEXT=os.environ.get("INPUT_TELEGRAM_MSG_TEXT")
     try:
-        GH_EVENT = json.loads(os.environ.get("INPUT_GH_EVENT"))
-    except Exception as e:
-        raise Exception("Unable to serialize GH_EVENT, or not found\n" + str(e))
-    GH_SHA=os.environ.get("GITHUB_SHA")
-    GH_ACTOR=os.environ.get("GITHUB_ACTOR")
-    GH_EVENT_NAME=os.environ.get("GITHUB_EVENT_NAME")
-    GH_WORKFLOW=os.environ.get("GITHUB_WORKFLOW")
+        TELEGRAM_MSG_INLINE_KEYBOARD=json.loads(os.environ.get("INPUT_TELEGRAM_MSG_INLINE_KEYBOARD", []))
+    except:
+        raise Exception("TELEGRAM_MSG_INLINE_KEYBOARD could not be parsed as JSON")
+    TELEGRAM_MSG_PARSE_MODE=os.environ.get("INPUT_TELEGRAM_MSG_PARSE_MODE")

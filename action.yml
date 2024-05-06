@@ -1,4 +1,4 @@
-name: telegram-notify-action
+name: telegram-alert-action
 description: 'Send a Telegram message when a github event is triggered'
 author: 'georgepstaylor'
 inputs:
